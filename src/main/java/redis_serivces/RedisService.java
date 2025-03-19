@@ -1,8 +1,10 @@
-package GameStructure;
+package redis_serivces;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+
+import GameStructure.GameComm;
 
 @Service
 public class RedisService {

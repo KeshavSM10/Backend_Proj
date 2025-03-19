@@ -1,6 +1,10 @@
 package GameStructure;
 
 import org.springframework.stereotype.Component;
+
+import services.GameDynamics;
+import services.TeamManagement;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 

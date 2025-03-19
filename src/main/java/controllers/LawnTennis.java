@@ -1,4 +1,4 @@
-package GameStructure;
+package controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import Players.PlayersData;
-import Players.playersRegistered;
-import Players.playersRepository;
+import DTO.PlayersData;
+import repositories.PlayersRegistered;
+import repositories.PlayersRepository;
+import services.GameDynamics;
+import services.TeamManagement;
+import services.GameService;
 
 @SpringBootApplication
 @RestController
@@ -26,7 +29,7 @@ public class LawnTennis {
 	TeamManagement teammanagement;
 	
 	@Autowired
-	playersRepository repo;
+	PlayersRepository repo;
 	
 	@Autowired
 	PlayersData insert;
@@ -35,7 +38,7 @@ public class LawnTennis {
 	GameDynamics gamedynamics;
 	
 	@Autowired 
-	gameService gameservice;
+	GameService gameservice;
 	
 	@GetMapping("/Startgame")
 	public ResponseEntity<String> startgame() {
@@ -68,7 +71,7 @@ public class LawnTennis {
   }
 
    @PostMapping("/player-addition")
-   public ResponseEntity<playersRegistered> AddPlayer(@RequestBody playersRegistered Player) {
+   public ResponseEntity<PlayersRegistered> AddPlayer(@RequestBody PlayersRegistered Player) {
 	
 	   int id = repo.getLastID()+1;
 	   Player.setID(id);

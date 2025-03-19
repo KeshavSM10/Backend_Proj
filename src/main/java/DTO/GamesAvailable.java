@@ -1,8 +1,11 @@
-package GamesPlayed;
+package DTO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
+
+import repositories.GameRepository;
+import repositories.GamesInDatabase;
 
 import java.util.ArrayList;
 import java.util.List; 

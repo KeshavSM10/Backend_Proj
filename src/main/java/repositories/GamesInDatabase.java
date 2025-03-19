@@ -1,4 +1,4 @@
-package GamesPlayed;
+package repositories;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

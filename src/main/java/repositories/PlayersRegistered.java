@@ -1,4 +1,4 @@
-package Players;
+package repositories;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -10,16 +10,16 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "players")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class playersRegistered {
+public class PlayersRegistered {
 	
-	public playersRegistered(int Id,String Name, String Gameplayes, String Gender) {
+	public PlayersRegistered(int Id,String Name, String Gameplayes, String Gender) {
 		super();
 		ID = Id;
 		name = Name;
 		gameplayes = Gameplayes;
 		gender = Gender;
 	}
-	public playersRegistered() {
+	public PlayersRegistered() {
 		super();
 	}
 	

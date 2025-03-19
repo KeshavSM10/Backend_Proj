@@ -1,4 +1,4 @@
-package GameStructure;
+package services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -21,8 +21,8 @@ public class GameDynamics {
 	 public GameDynamics(TeamManagement match) {
 	        this.match = match;
 	        this.Format = match.Format;
-	        this.NumofSets = match.NumofSets;
-	        this.NumofGame = match.NumOfGame;
+	        this.NumofSets = match.getNumofSets();
+	        this.NumofGame = match.getNumOfGame();
 	    }
 	 
 	 public GameDynamics() {

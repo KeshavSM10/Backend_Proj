@@ -1,6 +1,10 @@
 package GameStructure;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import services.GameDynamics;
+import services.TeamManagement;
+
 import java.io.Serializable;
 
 public class GameComm implements Serializable {

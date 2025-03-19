@@ -6,8 +6,8 @@ import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import GamesPlayed.GameRepository;
-import GamesPlayed.GamesInDatabase;
+import repositories.GameRepository;
+import repositories.GamesInDatabase;
 
 @SpringBootApplication
 public class GameScorePallet {

@@ -1,9 +1,12 @@
-package Players;
+package DTO;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
+
+import repositories.PlayersRegistered;
+import repositories.PlayersRepository;
 
 @SpringBootApplication
 @Service
@@ -19,7 +22,7 @@ public class PlayersData {
 	private String gender;
 	
 	@Autowired
-	public playersRepository playersrepository;
+	public PlayersRepository playersrepository;
 	
 	@Autowired
 	public GetDataAndInsert getdata;
@@ -56,7 +59,7 @@ public class PlayersData {
 		this.gender = gender;
 	}
 	
-	public List<playersRegistered> GetAllplayers(){
+	public List<PlayersRegistered> GetAllplayers(){
 		return playersrepository.findAll();	
 	}
 	

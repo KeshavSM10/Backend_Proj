@@ -1,9 +1,12 @@
-package Players;
+package DTO;
 
 import java.util.Scanner;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import repositories.PlayersRegistered;
+import repositories.PlayersRepository;
 
 @Service
 public class GetDataAndInsert {
@@ -14,7 +17,7 @@ public class GetDataAndInsert {
 	String gender;
 	
 	@Autowired
-	public playersRepository playerrepo;
+	public PlayersRepository playerrepo;
 	
 	public GetDataAndInsert() {
 		super();		
@@ -32,7 +35,7 @@ public class GetDataAndInsert {
 	}
 	
 	public String Insert() {
-		playersRegistered NovelPlayer = new playersRegistered(id,Name, Games, gender);
+		PlayersRegistered NovelPlayer = new PlayersRegistered(id,Name, Games, gender);
 		try {
 			playerrepo.save(NovelPlayer);
 			System.out.println(id);

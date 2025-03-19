@@ -1,4 +1,4 @@
-package GameStructure;
+package services;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,7 +9,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import Players.playersRegistered;
+
+import repositories.PlayersRegistered;
 
 
 
@@ -19,9 +20,9 @@ public class TeamManagement implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
-	 List<playersRegistered> Team1 = new ArrayList<>();
-	 List<playersRegistered> Team2 = new ArrayList<>();
-	 int Format;
+	 List<PlayersRegistered> Team1 = new ArrayList<>();
+	 List<PlayersRegistered> Team2 = new ArrayList<>();
+	 public int Format;
 	 Scanner sc = new Scanner(System.in);
 	 int NumOfGame, NumofSets;
 
@@ -30,9 +31,9 @@ public class TeamManagement implements Serializable{
 	  }
 
 	 
-	public ResponseEntity<String> TeamingPlayersingles(int teamID, playersRegistered playerregistered) {
+	public ResponseEntity<String> TeamingPlayersingles(int teamID, PlayersRegistered playerregistered) {
 		
-		playersRegistered player = playerregistered;
+		PlayersRegistered player = playerregistered;
 		if(teamID == 1 && Team1.size() == 0) {
 			Team1.add(player);
 			return ResponseEntity.ok("Player"+player.getName() +"Added Succesfully to team 1, Add Player of Team 2");
@@ -58,9 +59,9 @@ public class TeamManagement implements Serializable{
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid Team ID. Only 1 and 2 are allowed.");
 	  }
 
-	public ResponseEntity<String> TeamingForDoubles(int teamID,playersRegistered playerregistered){
+	public ResponseEntity<String> TeamingForDoubles(int teamID,PlayersRegistered playerregistered){
 	
-	    playersRegistered player = playerregistered;
+	    PlayersRegistered player = playerregistered;
 		if(teamID == 1 && Team1.size()==0) {
 			Team1.add(player);
 			return ResponseEntity.ok("Player"+player.getName() +"Added Succesfully to team 1, Add second Player");
@@ -130,19 +131,19 @@ public class TeamManagement implements Serializable{
 		   return ResponseEntity.status(HttpStatus.CONFLICT).body("First Complete fillling team details and game dynamics"+Team1.size()+"   "+Team2.size()+"  "+Format);
 	   }
 
-	public List<playersRegistered> getTeam1() {
+	public List<PlayersRegistered> getTeam1() {
 		return Team1;
 	}
 
-	public void setTeam1(List<playersRegistered> team1) {
+	public void setTeam1(List<PlayersRegistered> team1) {
 		Team1 = team1;
 	}
 
-	public List<playersRegistered> getTeam2() {
+	public List<PlayersRegistered> getTeam2() {
 		return Team2;
 	}
 
-	public void setTeam2(List<playersRegistered> team2) {
+	public void setTeam2(List<PlayersRegistered> team2) {
 		Team2 = team2;
 	}
 

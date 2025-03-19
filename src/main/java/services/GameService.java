@@ -1,4 +1,4 @@
-package GameStructure;
+package services;
 
 import java.util.UUID;
 
@@ -8,12 +8,15 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import Players.PlayersData;
-import Players.playersRegistered;
-import Players.playersRepository;
+
+import DTO.PlayersData;
+import GameStructure.GameComm;
+import GameStructure.GameFactory;
+import repositories.PlayersRegistered;
+import repositories.PlayersRepository;
 
 @Service
-public class gameService {
+public class GameService {
     
     @Autowired
     private RedisTemplate<String, GameComm> redisTemplate;
@@ -22,7 +25,7 @@ public class gameService {
     private GameFactory gameFactory;
     
 	 @Autowired
-	 playersRepository repo;
+	 PlayersRepository repo;
 	 
 	 @Autowired
 	 PlayersData insert;
@@ -67,7 +70,7 @@ public class gameService {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Game not found with ID: " + gameid);
         }
         
-        playersRegistered player = repo.findById(playerid)
+        PlayersRegistered player = repo.findById(playerid)
         	    .orElseThrow(() -> new RuntimeException("Player not found with ID: " + playerid));
 
 
@@ -90,7 +93,7 @@ public class gameService {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Game not found with ID: " + gameid);
             }
             
-            playersRegistered player = repo.getReferenceById(playerid);
+            PlayersRegistered player = repo.getReferenceById(playerid);
 
             ResponseEntity<String> re = game.getTeamManagement().TeamingForDoubles(teamID, player);
         

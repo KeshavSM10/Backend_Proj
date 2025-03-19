@@ -1,13 +1,24 @@
-Hello Everyone, 
+DevOps-Backed Game Score Management System
+Overview
+This project started as a learning exercise but evolved into a robust Java Spring Boot backend system with industry-level DevOps integration. The system is Dockerized, making it a great step toward understanding and implementing DevOps best practices in real-world applications.
 
-This is a Dev-Ops backend system building in process. This was meant to be part of learning but turned out to be a strong Cs project for Java, Springboot backend Developement. With Dockerized systemization, this is a step way to learn Dev-Ops and implement in real life with industry majors and standards. This system servesd as score guide and game score pallet for players. Not a gaming platform but more a game guide. Currently has only one Game [Lawn tennis] but can be extended to 10+ games. Also has MySQl connection to store and retrieve players data as well as games data. has Redis in use to maintain data of 100k+ concurrent games with 99.99% independence and isolation. Integrated with basic LLM i.e. gpt2 using it's API taken from hugging face. So this is a scalable, reliable, semi-Industry ready project.
-This project made my undrstanding of Backend developement, REST principles and software engineering strong.
+It is not a gaming platform but rather a game score management system that serves as a score guide and game score pallet for players. Currently, it supports Lawn Tennis but is designed for scalability, allowing easy extension to 10+ games in the future.
 
-Tech-Stack:
-Java
-Spring-Boot
-MySQl
-REST API
-Redis
-LLM integration
-Docker
+Key Features
+✅ MySQL Database – Stores and retrieves player and game data efficiently.
+✅ Redis Caching – Supports 100K+ concurrent games with 99.99% independence and isolation.
+✅ LLM Integration – Integrated with GPT-2 (via Hugging Face API) for basic AI interactions.
+✅ REST API – Follows proper RESTful principles for smooth backend interactions.
+✅ Dockerization – Ensures easy deployment and scalability.
+
+Tech Stack
+🔹 Java (Spring Boot)
+🔹 MySQL
+🔹 Redis
+🔹 REST API
+🔹 LLM (GPT-2 via Hugging Face)
+🔹 Docker
+
+Current Status & Future Improvements
+🚀 Currently supports Lawn Tennis – expanding to multiple games.
+🔧 Further improvements planned – enhanced AI, API optimizations, security upgrades, etc.

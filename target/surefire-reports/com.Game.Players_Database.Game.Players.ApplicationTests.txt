@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.Game.Players_Database.Game.Players.ApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.506 s -- in com.Game.Players_Database.Game.Players.ApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.171 s -- in com.Game.Players_Database.Game.Players.ApplicationTests
